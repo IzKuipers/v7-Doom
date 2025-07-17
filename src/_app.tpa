@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "name": "Doom",
+    "version": "1.0.0",
+    "author": "Izaak Kuipers",
+    "icon": "@local:icon.png"
+  },
+  "position": {
+    "centered": true,
+    "x": 0,
+    "y": 0
+  },
+  "size": {
+    "w": 642,
+    "h": 442
+  },
+  "minSize": {
+    "w": 642,
+    "h": 442
+  },
+  "maxSize": {
+    "w": -1,
+    "h": -1
+  },
+  "state": {
+    "minimized": false,
+    "maximized": false,
+    "headless": false,
+    "resizable": true,
+    "fullscreen": false
+  },
+  "controls": {
+    "minimize": true,
+    "maximize": true,
+    "close": true
+  },
+  "glass": false,
+  "hidden": false,
+  "core": false,
+  "entrypoint": "js/main.js",
+  "id": "IzK_Doom"
+}
