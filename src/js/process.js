@@ -1,5 +1,5 @@
-const html = await loadHtml("body.html");
-const { __START_DOSBOX__ } = await load("js/jsdos.js");
+const html = await loadHtml("../body.html");
+const { __START_DOSBOX__ } = await load("./jsdos.js");
 
 class proc extends ThirdPartyAppProcess {
   jsdos;

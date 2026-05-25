@@ -1,4 +1,4 @@
 const shellPid = +env.get("shell_pid");
-const { proc } = await load("js/process.js");
+const { proc } = await load("./process.js");
 
 runApp(proc, $METADATA, shellPid);

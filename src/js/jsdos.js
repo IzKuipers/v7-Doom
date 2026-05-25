@@ -1,3 +1,4 @@
+// #unsafe
 window.Dos = undefined;
 function __START_DOSBOX__(paused) {
   var e = Object.defineProperty,
