@@ -3,7 +3,7 @@
     "name": "Doom",
     "description": "Play Doom inside of ArcOS",
     "author": "Izaak Kuipers",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "installLocation": "U:/Applications/IzK_Doom",
     "appId": "IzK_Doom",
     "store": {

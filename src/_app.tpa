@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "Doom",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Izaak Kuipers",
     "icon": "@local:icon.png",
     "appGroup": "entertainment"
