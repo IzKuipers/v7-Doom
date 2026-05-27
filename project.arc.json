@@ -3,7 +3,7 @@
     "name": "Doom",
     "description": "Play Doom inside of ArcOS",
     "author": "Izaak Kuipers",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "installLocation": "U:/Applications/IzK_Doom",
     "appId": "IzK_Doom",
     "store": {
@@ -13,6 +13,6 @@
   "outFile": "IzK_Doom.arc",
   "payloadDir": "src",
   "devPort": 3128,
-  "buildHash": "ed497741",
+  "buildHash": "0a1a70d3",
   "noHotRelaunch": false
 }

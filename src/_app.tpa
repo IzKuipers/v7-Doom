@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "Doom",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "author": "Izaak Kuipers",
     "icon": "@local:icon.png",
     "appGroup": "entertainment"
@@ -38,6 +38,6 @@
   "glass": false,
   "hidden": false,
   "core": false,
-  "entrypoint": "js/main.js",
+  "entrypoint": "js/process.js",
   "id": "IzK_Doom"
 }

@@ -1,12 +1,12 @@
 const html = await loadHtml("../body.html");
 const { __START_DOSBOX__ } = await load("./jsdos.js");
 
-class proc extends ThirdPartyAppProcess {
+class DoomAppRuntime extends ThirdPartyAppProcess {
   jsdos;
   ci;
 
-  constructor(handler, pid, parentPid, app, workingDirectory, ...args) {
-    super(handler, pid, parentPid, app, workingDirectory);
+  constructor(pid, parentPid, app, operationId, workingDirectory, ...args) {
+    super(pid, parentPid, app, operationId, workingDirectory);
   }
 
   async render() {
@@ -16,6 +16,13 @@ class proc extends ThirdPartyAppProcess {
 
     let _paused = false;
     let paused = () => _paused;
+
+    const bundle = await fs.direct(
+      util.join(this.workingDirectory, "bin/doom.jsdos"),
+    );
+    const emulator = await fs.direct(
+      util.join(this.workingDirectory, "js/wdosbox.js"),
+    );
 
     this.handler.renderer.focusedPid.subscribe((v) => {
       if (this._disposed) return;
@@ -29,14 +36,14 @@ class proc extends ThirdPartyAppProcess {
       }
     });
 
-    __START_DOSBOX__(paused);
+    __START_DOSBOX__(paused, emulator);
 
     this.jsdos = Dos(player, {
       autoStart: true,
       kiosk: true,
       noNetworking: true,
       noCloud: true,
-      url: "https://v8.js-dos.com/bundles/doom.jsdos",
+      url: bundle,
       onEvent: (event, ci) => {
         if (this._disposed) return;
 
@@ -51,6 +58,8 @@ class proc extends ThirdPartyAppProcess {
           });
         } else if (event === "ci-ready") {
           this.ci = ci;
+          ci.exitResolve = () => this.closeWindow();
+
           window.console.log(this.jsdos, ci);
         }
       },
@@ -68,4 +77,4 @@ class proc extends ThirdPartyAppProcess {
   stop = this.onClose;
 }
 
-return { proc };
+return DoomAppRuntime;
